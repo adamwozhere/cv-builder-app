@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <title>CV Builder</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>CV Builder</h1>
+      <div class="container">
+        <form action="" id="cv-form">
+          <h2>Profile</h2>
+          <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" />
+          </div>
+          <div class="input-group">
+            <label for="subtitle">Job / subtitle</label>
+            <input type="text" name="subtitle" />
+          </div>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" />
+          </div>
+          <div class="input-group">
+            <label for="phone">Phone</label>
+            <input type="tel" name="phone" />
+          </div>
+          <div class="input-group">
+            <label for="website">Website</label>
+            <input type="url" name="website" id="" />
+          </div>
+          <div class="input-group">
+            <label for="linkedin">LinkedIn</label>
+            <input type="url" name="linkedin" />
+          </div>
+          <div class="input-group">
+            <label for="summary">Personal Summary</label>
+            <textarea name="summary" id="" cols="30" rows="10"></textarea>
+          </div>
+          <h2>Projects</h2>
+          <div class="input-group">
+            <label for="project-title">Project title</label>
+            <input type="text" name="project-title" />
+          </div>
+          <div class="input-group">
+            <label for="project-description">Project description</label>
+            <input type="text" name="project-description" />
+          </div>
+          <div class="input-group">
+            <label for="github">GitHub link</label>
+            <input type="url" name="github" />
+          </div>
+          <h2>Job</h2>
+          <section id="job-section">
+            <fieldset>
+              <div class="input-group">
+                <label for="job-date">Date</label>
+                <input type="date" name="job-date" id="" />
+              </div>
+              <div class="input-group">
+                <label for="job-title">Job title</label>
+                <input type="text" name="Job-title" />
+              </div>
+              <div class="input-group">
+                <label for="job-desciption">Job description</label>
+                <input type="text" name="job-desciption" />
+              </div>
+              <div class="input-group">
+                <label for="company-name">Company name</label>
+                <input type="text" name="company-name" />
+              </div>
+            </fieldset>
+          </section>
+          <div class="input-group">
+            <button id="add-job-btn">Add +</button>
+          </div>
+          <h2>Education</h2>
+          <div class="input-group">
+            <label for="study-date">Date</label>
+            <input type="date" name="study-date" />
+          </div>
+          <div class="input-group">
+            <label for="study-intitution"
+              >School / college / university name</label
+            >
+            <input type="text" name="study-institution" />
+          </div>
+          <div class="input-group">
+            <label for="study-description">Description</label>
+            <input type="text" name="description" />
+          </div>
+          <div class="input-group">
+            <label for="study-title">Course title</label>
+            <input type="text" name="study-title" />
+          </div>
+          <div class="input-group">
+            <button type="submit">Build CV</button>
+          </div>
+        </form>
+        <pre id="json-log"></pre>
+        <div id="cv-output"></div>
+      </div>
+    </div>
+  </body>
+</html>

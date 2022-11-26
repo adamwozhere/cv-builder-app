@@ -19,11 +19,14 @@ function buildCV() {
   const entries = Object.entries(formObj);
   entries.forEach((e) => console.log(e));
 
+  saveData(formObj);
+
   cvOutput.innerHTML = `
   <h2>${formObj.name}</h2>
   <p>${formObj.subtitle}</p>
   `;
 }
+
 addJobBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const html = `
@@ -47,4 +50,22 @@ addJobBtn.addEventListener('click', (e) => {
   </fieldset>
   `;
   document.getElementById('job-section').insertAdjacentHTML('beforeend', html);
+});
+
+function saveData(formData) {
+  console.log('save-data');
+  window.localStorage.setItem('cv-data', JSON.stringify(formData));
+}
+
+function loadData() {
+  const data = window.localStorage.getItem('cv-data');
+  if (data) return JSON.parse(data);
+}
+
+document.addEventListener('DOMContentLoaded', (e) => {
+  const cached = loadData();
+  console.log('load page', cached);
+  if (cached) {
+    document.getElementById('name-input').value = cached.name;
+  }
 });

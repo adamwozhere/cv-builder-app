@@ -24,3 +24,27 @@ function buildCV() {
   <p>${formObj.subtitle}</p>
   `;
 }
+addJobBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const html = `
+  <fieldset>
+    <div class="input-group">
+      <label for="job-date">Date</label>
+      <input type="date" name="job-date" id="" />
+    </div>
+    <div class="input-group">
+      <label for="job-title">Job title</label>
+      <input type="text" name="job-title" />
+    </div>
+    <div class="input-group">
+      <label for="job-desciption">Job description</label>
+      <input type="text" name="job-desciption" />
+    </div>
+    <div class="input-group">
+      <label for="company-name">Company name</label>
+      <input type="text" name="company-name" />
+    </div>
+  </fieldset>
+  `;
+  document.getElementById('job-section').insertAdjacentHTML('beforeend', html);
+});

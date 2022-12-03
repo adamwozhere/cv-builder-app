@@ -15,3 +15,11 @@ body {
   max-width: 920px;
   padding-block: 3rem;
 }
+
+.draggable {
+  cursor: pointer;
+}
+
+.over {
+  background-color: aquamarine;
+}

@@ -8,6 +8,9 @@ body {
   min-height: 100vh;
   font-family: sans-serif;
 }
+h2 {
+  margin-top: 2rem;
+}
 
 .wrapper {
   margin-inline: auto;
@@ -22,4 +25,8 @@ body {
 
 .over {
   background-color: aquamarine;
+}
+
+.form-group {
+  margin-top: 0.5rem;
 }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js" defer></script>
+    <script src="js/app.js" defer></script>
     <title>CV Builder</title>
   </head>
   <body>
@@ -13,29 +13,12 @@
       <h1>CV Builder</h1>
       <div class="container">
         <form action="" id="cv-form">
-          <section id="job-section">
-            <!-- <h2>Job</h2>
-            <fieldset>
-              <div class="input-group">
-                <label for="job-date">Date</label>
-                <input type="date" name="job-date" id="" />
-              </div>
-              <div class="input-group">
-                <label for="job-title">Job title</label>
-                <input type="text" name="job-title" />
-              </div>
-              <div class="input-group">
-                <label for="job-desciption">Job description</label>
-                <input type="text" name="job-desciption" />
-              </div>
-              <div class="input-group">
-                <label for="company-name">Company name</label>
-                <input type="text" name="company-name" />
-              </div>
-              <div class="input-group">
-                <button id="add-job-btn">Add +</button>
-              </div>
-            </fieldset> -->
+          <section data-section="profile">
+            <input type="text" name="name" />
+          </section>
+          <section id="job-section" data-section="work">
+            <input type="text" name="work1" />
+            <input type="text" name="work2" />
           </section>
           <button id="add-job-btn">Add Job</button>
         </form>

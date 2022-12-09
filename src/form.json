@@ -1,0 +1,40 @@
+{
+  "profile": [
+    {
+      "first_name": "Tom",
+      "last_name": "Hanks",
+      "occupation": "Actor",
+      "email": "tom@hanks.com"
+    }
+  ],
+  "work": [
+    {
+      "title": "job 1",
+      "description": "description 1"
+    },
+    {
+      "title": "job 2",
+      "description": "description 2"
+    }
+  ],
+  "education": [
+    {
+      "subject": "subject 1",
+      "college": "Portsmouth Uni",
+      "start_date": "2022-10",
+      "end_date": "2022-12"
+    },
+    {
+      "subject": "subject 2",
+      "college": "Bath Spa",
+      "start_date": "2022-10",
+      "end_date": "2022-12"
+    },
+    {
+      "subject": "subject 3",
+      "college": "Bath Spa",
+      "start_date": "2022-10",
+      "end_date": "2022-12"
+    }
+  ]
+}

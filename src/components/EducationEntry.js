@@ -1,4 +1,5 @@
 import FormField from './FormField';
+import schema from '../schema.json';
 
 export default function EducationEntry(
   data = {
@@ -10,30 +11,11 @@ export default function EducationEntry(
 ) {
   return `
     <div data-item>
-      ${FormField({
-        name: 'subject',
-        label: 'Subject',
-        type: 'text',
-        value: data.subject,
-      })}
-      ${FormField({
-        name: 'college',
-        label: 'College',
-        type: 'text',
-        value: data.college,
-      })}
-      ${FormField({
-        name: 'start_date',
-        label: 'Start Date',
-        type: 'month',
-        value: data.start_date,
-      })}
-      ${FormField({
-        name: 'end_date',
-        label: 'End Date',
-        type: 'month',
-        value: data.end_date,
-      })}
+      ${Object.keys(schema.education.fields)
+        .map((key) => {
+          return FormField(schema.education.fields[key], data);
+        })
+        .join('')}
       <button data-delete>Delete</delete>
     </div>
   `;

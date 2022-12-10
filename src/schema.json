@@ -1,1 +1,94 @@
-{}
+{
+  "profile": {
+    "heading": "Profile",
+    "fields": [
+      {
+        "name": "full_name",
+        "label": "Full Name",
+        "placeholder": "Tom Hanks",
+        "default_value": "",
+        "type": "text"
+      },
+      {
+        "name": "job_title",
+        "label": "Job Title",
+        "placeholder": "Actor",
+        "default_value": "",
+        "type": "text"
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "placeholder": "name@email.com",
+        "default_value": "",
+        "type": "email"
+      },
+      {
+        "name": "website",
+        "label": "Website",
+        "placeholder": "tomhanks.com",
+        "default_value": "",
+        "type": "url"
+      },
+      {
+        "name": "linkedin",
+        "label": "LinkedIn",
+        "placeholder": "linkedin.com/tomhanks",
+        "default_value": "",
+        "type": "url"
+      }
+    ]
+  },
+  "work": {
+    "heading": "Work History",
+    "fields": [
+      {
+        "name": "title",
+        "label": "Job",
+        "placeholder": "Job",
+        "default_value": "",
+        "type": "text"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "placeholder": "description",
+        "default_value": "",
+        "type": "text"
+      }
+    ]
+  },
+  "education": {
+    "heading": "Education History",
+    "fields": [
+      {
+        "name": "subject",
+        "label": "Subject",
+        "placeholder": "Subject",
+        "default_value": "",
+        "type": "text"
+      },
+      {
+        "name": "college",
+        "label": "College",
+        "placeholder": "College",
+        "default_value": "",
+        "type": "text"
+      },
+      {
+        "name": "start_date",
+        "label": "Start Date",
+        "placeholder": "",
+        "default_value": "",
+        "type": "month"
+      },
+      {
+        "name": "end_date",
+        "label": "End Date",
+        "placeholder": "",
+        "default_value": "",
+        "type": "month"
+      }
+    ]
+  }
+}

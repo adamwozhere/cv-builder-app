@@ -18,6 +18,8 @@ export default function Form(element, dataStore) {
       .map((section) => {
         console.log(section);
         let newHtml = build[section](data[section]);
+        // let newHtml = FormSection(data[section])
+
         // console.log(newHtml);
         return newHtml;
       })
@@ -99,6 +101,7 @@ export default function Form(element, dataStore) {
         obj.push(subObj);
       }
       newState[sectionName] = obj;
+      console.log('new state', newState);
     }
     store.setState(newState);
   };

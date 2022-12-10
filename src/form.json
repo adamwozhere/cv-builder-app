@@ -1,10 +1,11 @@
 {
   "profile": [
     {
-      "first_name": "Tom",
-      "last_name": "Hanks",
-      "occupation": "Actor",
-      "email": "tom@hanks.com"
+      "full_name": "Tom Hanks",
+      "job_title": "Actor",
+      "email": "tom@hanks.com",
+      "website": "tomhanks.com",
+      "linkedin": "linkedin.com/tomhanks"
     }
   ],
   "work": [

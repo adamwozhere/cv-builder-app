@@ -36,11 +36,19 @@
         "placeholder": "linkedin.com/tomhanks",
         "default_value": "",
         "type": "url"
+      },
+      {
+        "name": "summary",
+        "label": "Personal Summary",
+        "placeholder": "Summary about yourself...",
+        "default_value": "",
+        "type": "textarea"
       }
     ]
   },
   "work": {
     "heading": "Work History",
+    "instanced": "true",
     "fields": [
       {
         "name": "title",
@@ -60,6 +68,7 @@
   },
   "education": {
     "heading": "Education History",
+    "instanced": "true",
     "fields": [
       {
         "name": "subject",
@@ -77,17 +86,9 @@
       },
       {
         "name": "start_date",
-        "label": "Start Date",
         "placeholder": "",
         "default_value": "",
-        "type": "month"
-      },
-      {
-        "name": "end_date",
-        "label": "End Date",
-        "placeholder": "",
-        "default_value": "",
-        "type": "month"
+        "type": "customdate"
       }
     ]
   }

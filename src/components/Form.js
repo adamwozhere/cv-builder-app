@@ -1,7 +1,6 @@
-import WorkEntry from './WorkEntry';
-import ProfileEntry from './ProfileEntry';
-import EducationEntry from './EducationEntry';
+import FormEntry from './FormEntry';
 import defaultForm from '../form.json';
+import schema from '../schema.json';
 
 export default function Form(element, dataStore) {
   const form = element;
@@ -17,8 +16,8 @@ export default function Form(element, dataStore) {
     html += Object.keys(data)
       .map((section) => {
         console.log(section);
-        let newHtml = build[section](data[section]);
-        // let newHtml = FormSection(data[section])
+        // let newHtml = build[section](data[section]);
+        let newHtml = buildSection(section, data[section]);
 
         // console.log(newHtml);
         return newHtml;
@@ -29,62 +28,25 @@ export default function Form(element, dataStore) {
     form.innerHTML = html;
   }
 
-  const profile = (data) => {
-    console.log(data);
+  function buildSection(section, data) {
     return `
-    <section data-section="profile">
-      <h2>Profile</h2>
-        ${data
-          .map((item) => {
-            return ProfileEntry(item);
-          })
-          .join('')}
-      </div>
-    </section>
+      <section data-section="${section}">
+        <h2>${schema[section].heading}</h2>
+        <div data-content>
+          ${data
+            .map((item) => {
+              return FormEntry(section, item);
+            })
+            .join('')}
+        </div>
+        ${
+          schema[section].instanced === 'true'
+            ? `<button data-add="${section}">Add</button>`
+            : ''
+        }
+      </section>
     `;
-  };
-
-  const work = (data) => {
-    console.log('data', data);
-    return `
-    <section data-section="work">
-      <h2>Work</h2>
-      <button data-add="work">Add</button>
-      ${data
-        .map((item) => {
-          return WorkEntry(item);
-        })
-        .join('')} 
-    </section>
-    `;
-  };
-
-  const education = (data) => {
-    console.log(data);
-    return `
-    <section data-section="education">
-      <h2>Education</h2>
-      <button data-add="education">Add</button>
-      ${data
-        .map((item) => {
-          return EducationEntry(item);
-        })
-        .join('')}
-    </section>
-    `;
-  };
-
-  const build = {
-    profile,
-    work,
-    education,
-  };
-
-  const createEntry = {
-    profile: ProfileEntry,
-    work: WorkEntry,
-    education: EducationEntry,
-  };
+  }
 
   const update = () => {
     let newState = {};
@@ -95,8 +57,14 @@ export default function Form(element, dataStore) {
       let obj = [];
       for (let item of Array.from(section.querySelectorAll('[data-item]'))) {
         let subObj = {};
-        for (let input of Array.from(item.querySelectorAll('input'))) {
-          subObj[input.name] = input.value;
+        for (let input of Array.from(item.querySelectorAll('[data-input]'))) {
+          console.log(input.type);
+          if (input.type === 'checkbox') {
+            console.log('updating checkbox');
+            subObj[input.name] = input.checked;
+          } else {
+            subObj[input.name] = input.value;
+          }
         }
         obj.push(subObj);
       }
@@ -107,23 +75,57 @@ export default function Form(element, dataStore) {
   };
 
   form.addEventListener('click', (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+
+    console.log(e.target);
+
+    if (e.target.type === 'checkbox') toggleCheckbox(e);
 
     if (e.target.hasAttribute('data-delete')) {
-      e.target.closest('[data-item]').remove();
-      update();
+      e.target.closest('[data-item]').classList.add('deleting');
+      setTimeout(() => {
+        e.target.closest('[data-item]').remove();
+        update();
+      }, 200);
     } else if (e.target.hasAttribute('data-add')) {
       const entry = e.target.getAttribute('data-add');
 
       document
-        .querySelector(`[data-section=${entry}]`)
-        .insertAdjacentHTML('beforeend', createEntry[entry]());
+        .querySelector(`[data-section=${entry}] [data-content]`)
+        .insertAdjacentHTML('beforeend', FormEntry(entry));
+
+      document
+        .querySelector(`[data-section=${entry}] [data-content]`)
+        .lastElementChild.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
     }
   });
 
   form.addEventListener('input', (e) => {
     update();
   });
+
+  form.addEventListener('change', (e) => {
+    console.log('target', e.target);
+    // update();
+  });
+
+  function toggleCheckbox(e) {
+    console.log('closest', e.target.closest('.row'));
+    const row = e.target.closest('.row');
+
+    const inputs = row.querySelectorAll('[data-input]');
+    console.log(inputs);
+    Array.from(inputs).map((input) => {
+      input.disabled = e.target.checked;
+      if (!input.enabled) {
+        input.value = null;
+        update();
+      }
+    });
+  }
 
   return {
     buildForm,

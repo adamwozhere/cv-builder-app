@@ -1,10 +1,9 @@
 import Store from './controllers/Store';
 import Form from './components/Form';
 
-import './style/reset.css';
-import './style/main.css';
+import './style/main.scss';
 
-let cvdata = new Store('mycvdata');
+const cvdata = new Store('mycvdata');
 
-let form = new Form(document.querySelector('#app'), cvdata);
-form.buildForm(cvdata.getState());
+const form = new Form(document.querySelector('#app'), cvdata);
+form.renderForm(cvdata.getState());

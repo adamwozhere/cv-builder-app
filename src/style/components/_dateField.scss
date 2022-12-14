@@ -1,0 +1,48 @@
+.date-field {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    legend {
+      font-size: 14px;
+      font-weight: 900;
+      color: hsl(240, 12%, 60%);
+      margin-bottom: 1rem;
+    }
+  }
+
+  .field-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &-inline {
+      display: flex;
+      gap: 0.3rem;
+      align-self: end;
+      align-items: center;
+      padding-bottom: 0.75rem;
+    }
+  }
+
+  .form-field {
+    margin-top: 0;
+    label {
+      font-size: 11px;
+    }
+  }
+
+  input[type='checkbox'] {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  input:disabled {
+    opacity: 0.3;
+  }
+}

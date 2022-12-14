@@ -1,0 +1,41 @@
+{
+  "profile": [
+    {
+      "full_name": "",
+      "job_title": "",
+      "email": "",
+      "website": "",
+      "linkedin": "",
+      "summary": ""
+    }
+  ],
+  "work": [
+    {
+      "job_title": "",
+      "company_name": "",
+      "job_description": "",
+      "start_date_month": "",
+      "start_date_year": "",
+      "end_date_month": "",
+      "end_date_year": ""
+    }
+  ],
+  "projects": [
+    {
+      "project_title": "",
+      "project_description": "",
+      "github_link": ""
+    }
+  ],
+  "education": [
+    {
+      "subject": "",
+      "subject_description": "",
+      "college": "",
+      "start_date_month": "",
+      "start_date_year": "",
+      "end_date_month": "",
+      "end_date_year": ""
+    }
+  ]
+}

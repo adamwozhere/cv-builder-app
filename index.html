@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <title>Vite App</title>
+    <title>CV Builder</title>
   </head>
   <body>
     <header>
@@ -18,7 +18,18 @@
         <h1>CV builder</h1>
       </div>
     </header>
-    <div id="app" class="flow"></div>
+    <div class="main">
+      <div class="sidebar">
+        <ul>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#work">Work History</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education History</a></li>
+        </ul>
+      </div>
+      <div id="app" class="flow"></div>
+    </div>
+
     <script type="module" src="/src/App.js"></script>
   </body>
 </html>

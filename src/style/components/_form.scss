@@ -1,0 +1,59 @@
+/* Base default form styles */
+input,
+textarea,
+button {
+  font: inherit;
+  background-color: hsl(240, 4%, 95%);
+  border: 2px solid transparent;
+  transition: all 100ms ease;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+textarea {
+  padding: 0.4rem 0.6rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  background-color: white;
+  border-bottom: 2px solid blue;
+  caret-color: blue;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-field {
+  margin-top: 3rem;
+}
+.form-field > * {
+  display: block;
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
+label {
+  font-size: 14px;
+  color: hsl(240, 12%, 60%);
+  font-weight: 900;
+}
+
+[data-item] {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1.5rem;
+  background-color: white;
+  margin-top: 2rem;
+  height: 100%;
+  transition: all 250ms ease-in;
+}
+
+.deleting {
+  height: 10px;
+}

@@ -1,11 +1,11 @@
-export default function CVdocument(element, dataStore) {
-  const cv = element;
-  const store = dataStore;
+import Store from './controllers/Store';
+const store = Store('cvdata');
+const data = store.getState();
+const element = document.getElementById('cv');
 
-  function renderCV() {
-    const data = store.getState();
+console.log('CV page');
 
-    cv.innerHTML = `
+element.innerHTML = `
       <div class="cv-inner">
         <p>Preview</p>
         <div class="cv-container">
@@ -13,14 +13,14 @@ export default function CVdocument(element, dataStore) {
           <p>${data.profile[0].job_title}</p>
           <ul>
             <li><a href="mailto:${data.profile[0].email}">${
-      data.profile[0].email
-    }</a></li>
+  data.profile[0].email
+}</a></li>
             <li><a href="${data.profile[0].website}" target="_blank">${
-      data.profile[0].website
-    }</a></li>
+  data.profile[0].website
+}</a></li>
             <li><a href="${data.profile[0].linkedin}" target="_blank">${
-      data.profile[0].linkedin
-    }</a></li>
+  data.profile[0].linkedin
+}</a></li>
           </ul>
           <p>${data.profile[0].summary}</p>
           <h2>Work</h3>
@@ -90,6 +90,3 @@ export default function CVdocument(element, dataStore) {
         </div>
       </div>
     `;
-  }
-  return { renderCV };
-}

@@ -1,7 +1,15 @@
 header {
   background-color: rgb(38, 9, 44);
   color: white;
-  position: sticky;
+  position: fixed;
+  width: 100vw;
   top: 0;
   z-index: 10;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#view-save-btn {
 }

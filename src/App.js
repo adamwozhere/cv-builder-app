@@ -4,7 +4,7 @@ import CVdocument from './components/CVdocument';
 
 import './style/main.scss';
 
-const App = async () => {
+const App = () => {
   const cvdata = Store('mycvdata');
 
   const cv = CVdocument(document.querySelector('#cv'), cvdata);
@@ -17,6 +17,7 @@ const App = async () => {
     console.log('updating from App.js');
     form.update();
   }
+  return { cvdata };
 };
 
 document.addEventListener('DOMContentLoaded', App);

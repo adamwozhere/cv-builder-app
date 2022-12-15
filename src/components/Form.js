@@ -1,6 +1,5 @@
 import FormSection from './FormSection';
 import defaultCV from '../data/defaultcv.json';
-
 export default function Form(element, dataStore) {
   const form = element;
   const store = dataStore;
@@ -22,7 +21,7 @@ export default function Form(element, dataStore) {
   };
 
   // update state from form inputs
-  window.update = function () {
+  function update() {
     let newState = {};
     const sections = Array.from(form.querySelectorAll('[data-section]'));
 
@@ -46,7 +45,7 @@ export default function Form(element, dataStore) {
       console.log('new state', newState);
     }
     store.setState(newState);
-  };
+  }
 
   form.addEventListener('input', update);
 

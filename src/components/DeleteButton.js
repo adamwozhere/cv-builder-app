@@ -10,5 +10,5 @@ window.handleDelete = function (button) {
   setTimeout(() => {
     button.closest('[data-item]').remove();
     update();
-  }, 2000);
+  }, 250);
 };

@@ -9,6 +9,6 @@ window.handleDelete = function (button) {
   button.closest('[data-item]').classList.add('deleting');
   setTimeout(() => {
     button.closest('[data-item]').remove();
-    update();
+    window.update();
   }, 250);
 };

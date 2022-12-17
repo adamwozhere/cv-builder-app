@@ -4,6 +4,7 @@
 // Company Name
 
 import TextField from './TextField';
+import TextAreaField from './TextAreaField';
 import DateField from './DateField';
 import DeleteButton from './DeleteButton';
 
@@ -29,11 +30,13 @@ export default function WorkItem(data, index) {
         data,
         index
       )}
-      ${TextField(
+      ${TextAreaField(
         {
           name: 'job_description',
           label: 'Job Description',
           placeholder: 'Job description...',
+          rows: '1',
+          cols: '10',
         },
         data,
         index

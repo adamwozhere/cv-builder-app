@@ -2,7 +2,7 @@ header {
   background-color: rgb(38, 9, 44);
   color: white;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   top: 0;
   z-index: 10;
   padding: 1rem;
@@ -11,5 +11,8 @@ header {
   align-items: center;
 }
 
-#view-save-btn {
+@media print {
+  header {
+    display: none;
+  }
 }

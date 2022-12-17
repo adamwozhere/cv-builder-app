@@ -3,6 +3,7 @@
 // Github Link
 
 import TextField from './TextField';
+import TextAreaField from './TextAreaField';
 import URLField from './URLField';
 import DeleteButton from './DeleteButton';
 
@@ -19,11 +20,13 @@ export default function ProjectItem (data, index) {
         data,
         index
       )}
-      ${TextField(
+      ${TextAreaField(
         {
           name: 'project_description',
           label: 'Description',
           placeholder: 'Top secret...',
+          rows: '1',
+          cols: '10',
         },
         data,
         index

@@ -1,0 +1,139 @@
+#cv-view {
+  display: none;
+
+  background-color: grey;
+}
+#cv-view.show {
+  display: grid;
+  position: absolute;
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+  width: 100%;
+  min-height: 100vh;
+  place-content: center;
+}
+
+#cv-view {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  font-size: 11pt;
+  line-height: 1.4;
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background-color: hsl(0, 0%, 85%);
+    color: hsl(240, 12%, 26%);
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  .page {
+    min-height: 297mm;
+    width: 210mm;
+    margin: 0 auto;
+    background-color: white;
+  }
+
+  .container {
+    padding: 0.5in 0.8in;
+  }
+
+  li {
+    margin-top: 1.5rem;
+    list-style: none;
+    position: relative;
+  }
+
+  h1 {
+    font-size: 32pt;
+  }
+
+  h2 {
+    margin-top: 3rem;
+    font-size: 20pt;
+  }
+
+  h3 {
+    font-size: 11pt;
+  }
+
+  .occupation {
+    font-weight: bold;
+    font-size: 20pt;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .date {
+    font-weight: bold;
+  }
+
+  section {
+    margin-top: 2rem;
+  }
+
+  .profile li {
+    list-style-type: none;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1;
+    gap: 1rem;
+    margin-top: 0.2rem;
+    font-weight: bold;
+  }
+
+  .summary {
+    margin-top: 2rem;
+  }
+  .summary > p:not(:first-child) {
+    margin-top: 0.5rem;
+  }
+
+  .work ul,
+  .education ul {
+    border-left: 2px solid black;
+    padding-left: 2rem;
+    margin-left: 0.5rem;
+  }
+
+  .work li::before,
+  .education li::before {
+    position: absolute;
+    content: '⬛';
+    left: -2.655rem;
+  }
+
+  @media print {
+    * {
+      display: none !important;
+    }
+    @page {
+      size: 210mm 297mm;
+    }
+
+    // html,
+    // body,
+    .page {
+      visibility: visible;
+      display: block;
+      width: 210mm;
+      height: 100%;
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: white;
+      color: black;
+      /* overflow: hidden; */
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}

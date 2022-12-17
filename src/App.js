@@ -1,23 +1,42 @@
 import Store from './controllers/Store';
 import Form from './components/Form';
-import CVdocument from './components/CVdocument';
 
 import './style/main.scss';
 
 const App = () => {
   const cvdata = Store('mycvdata');
+  Form(document.querySelector('#app'), cvdata);
 
-  const cv = CVdocument(document.querySelector('#cv'), cvdata);
-  const form = Form(document.querySelector('#app'), cvdata);
-  form.renderForm(cvdata.getState());
+  const viewSaveBtn = document.querySelector('#view-cv-btn');
+  viewSaveBtn.addEventListener('click', viewSave);
 
-  cv.renderCV();
+  const cvView = document.querySelector('#cv-view');
+  function viewSave() {
+    console.log('view/save');
 
-  function update() {
-    console.log('updating from App.js');
-    form.update();
+    if (cvView.classList.contains('show')) {
+      cvView.classList.remove('show');
+      document.querySelector('#app').classList.remove('hide');
+      document.querySelector('#cv-preview').classList.remove('hide');
+      viewSaveBtn.textContent = 'View CV';
+    } else {
+      cvView.classList.add('show');
+      document.querySelector('#app').classList.add('hide');
+      document.querySelector('#cv-preview').classList.add('hide');
+      viewSaveBtn.textContent = 'Back...';
+      window.scrollTo(0, 0);
+    }
   }
-  return { cvdata };
+
+  const saveBtn = document.getElementById('save-btn');
+  saveBtn.addEventListener('click', () => {
+    alert("this doesn't work yet.... imaginary PDF here!");
+  });
+
+  const loadBtn = document.getElementById('load-btn');
+  loadBtn.addEventListener('click', () => {
+    alert("this does't work yet either...");
+  });
 };
 
 document.addEventListener('DOMContentLoaded', App);

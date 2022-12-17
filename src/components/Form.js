@@ -1,8 +1,11 @@
 import FormSection from './FormSection';
 import defaultCV from '../data/defaultcv.json';
+import CVdocument from './CVdocument';
+
 export default function Form(element, dataStore) {
   const form = element;
   const store = dataStore;
+  const cvDocument = CVdocument();
 
   // new form render
   const renderForm = (state) => {
@@ -18,10 +21,12 @@ export default function Form(element, dataStore) {
 
     console.log(html);
     form.innerHTML = html;
+    cvDocument.render(document.querySelector('#cv-view'), data);
+    cvDocument.render(document.querySelector('#cv-preview'), data);
   };
 
   // update state from form inputs
-  function update() {
+  window.update = function () {
     let newState = {};
     const sections = Array.from(form.querySelectorAll('[data-section]'));
 
@@ -31,25 +36,20 @@ export default function Form(element, dataStore) {
       for (let item of Array.from(section.querySelectorAll('[data-item]'))) {
         let subObj = {};
         for (let input of Array.from(item.querySelectorAll('[data-input]'))) {
-          console.log(input.type);
-          if (input.type === 'checkbox') {
-            console.log('updating checkbox');
-            subObj[input.name] = input.checked;
-          } else {
-            subObj[input.name] = input.value;
-          }
+          subObj[input.name] =
+            input.type === 'checkbox' ? input.checked : input.value;
         }
         obj.push(subObj);
       }
       newState[sectionName] = obj;
-      console.log('new state', newState);
+      // console.log('new state', newState);
     }
     store.setState(newState);
-  }
+    cvDocument.render(document.querySelector('#cv-view'), newState);
+    cvDocument.render(document.querySelector('#cv-preview'), newState);
+  };
 
   form.addEventListener('input', update);
 
-  return {
-    renderForm,
-  };
+  renderForm(store.getState());
 }

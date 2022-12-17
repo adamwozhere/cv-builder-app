@@ -14,7 +14,7 @@ export default function FormSection(section, data) {
   return `
     <section data-section="${section}">
       <h2>${headings[section]}</h2>
-      <div data-content="${section}">
+      <div data-content="${section}" class="flow">
         ${data.map((item) => FormItem(section, item)).join('')}
       </div>
       ${AddItemButton(section)}

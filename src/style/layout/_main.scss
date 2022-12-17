@@ -2,3 +2,17 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+#app {
+  padding-inline: 1rem;
+  padding-block: 6rem;
+}
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 950px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "profile": [
+    {
+      "full_name": "Tom Hanks",
+      "job_title": "Actor",
+      "email": "tom@hanks.com",
+      "website": "tomhanks.com",
+      "linkedin": "linkedin.com/tomhanks",
+      "summary": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus id libero corrupti dolorum reprehenderit. Saepe rerum accusantium totam nisi perferendis quo distinctio itaque atque dolore praesentium cumque quos ipsa nam."
+    }
+  ],
+  "work": [
+    {
+      "job_title": "Project Lead",
+      "company_name": "Google",
+      "job_description": "Lead developer",
+      "start_date_month": "4",
+      "start_date_year": "2022",
+      "end_date_month": "",
+      "end_date_year": "",
+      "ongoing": "true"
+    },
+    {
+      "job_title": "Senior Developer",
+      "comapny_name": "Airbnb",
+      "job_description": "Developer on the Arbnb mobile app",
+      "start_date_month": "10",
+      "start_date_year": "2019",
+      "end_date_month": "12",
+      "end_date_year": "2021"
+    },
+    {
+      "job_title": "Front-end Developer",
+      "company_name": "Apple",
+      "job_description": "Developer on Apple.com website",
+      "start_date_month": "5",
+      "start_date_year": "2017",
+      "end_date_month": "11",
+      "end_date_year": "2021"
+    }
+  ],
+  "projects": [
+    {
+      "project_title": "Project X",
+      "project_description": "Top secret project x",
+      "github_link": "github.com/project-x"
+    },
+    {
+      "project_title": "Project Y",
+      "project_description": "Top secret project y",
+      "github_link": "github.com/project-y"
+    },
+    {
+      "project_title": "Project Z",
+      "project_description": "Top secret project z",
+      "github_link": "github.com/project-z"
+    }
+  ],
+  "education": [
+    {
+      "subject": "Web Development",
+      "subject_description": "Front-end Web Development Bootcamp",
+      "college": "Bath Spa University",
+      "start_date_month": "10",
+      "start_date_year": "2022",
+      "end_date_month": "12",
+      "end_date_year": "2022"
+    },
+    {
+      "subject": "Animation",
+      "subject_description": "Bachelor of Arts, First Class Honours",
+      "college": "Portsmouth University",
+      "start_date_month": "10",
+      "start_date_year": "2005",
+      "end_date_month": "8",
+      "end_date_year": "2008"
+    },
+    {
+      "subject": "Graphics / Multimedia",
+      "subject_description": "BTEC ND",
+      "college": "Wiltshire College",
+      "start_date_month": "9",
+      "start_date_year": "2003",
+      "end_date_month": "7",
+      "end_date_year": "2005"
+    }
+  ]
+}

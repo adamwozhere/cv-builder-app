@@ -91,7 +91,7 @@ export default function CVdocument() {
                 }</span>
                   <h3>${item.subject}</h3>
                   <span>${item.college}</span>
-                  <p class="description>${item.subject_description}</p>
+                  <p class="description">${item.subject_description}</p>
                 </li>
               `;
               })

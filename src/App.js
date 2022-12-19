@@ -1,11 +1,12 @@
 import Store from './controllers/Store';
 import Form from './components/Form';
+import examplecv from './data/examplecv.json';
 
 import './style/main.scss';
 
 const App = () => {
   const cvdata = Store('mycvdata');
-  Form(document.querySelector('#app'), cvdata);
+  const form = Form(document.querySelector('#app'), cvdata);
 
   const viewSaveBtn = document.querySelector('#view-cv-btn');
   viewSaveBtn.addEventListener('click', viewSave);
@@ -35,7 +36,7 @@ const App = () => {
 
   const loadBtn = document.getElementById('load-btn');
   loadBtn.addEventListener('click', () => {
-    alert("this does't work yet either...");
+    renderForm(examplecv);
   });
 };
 

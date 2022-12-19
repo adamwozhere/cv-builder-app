@@ -8,7 +8,7 @@ export default function Form(element, dataStore) {
   const cvDocument = CVdocument();
 
   // new form render
-  const renderForm = (state) => {
+  window.renderForm = (state) => {
     const data = state === null ? defaultCV : state;
 
     // delete form - apparently quicker than .innerHTML = '';
